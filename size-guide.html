@@ -1,0 +1,319 @@
+<!-- size-guide.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Guide | SummerRio Swimwear</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .sg-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 1rem;
+        }
+
+        .sg-nav a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .sg-section {
+            margin-bottom: 4rem;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            border: 1px solid #eee;
+        }
+
+        th {
+            background-color: #f9f9f9;
+        }
+
+        .unit-selector.active {
+            background-color: var(--color-primary);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <a href="index.html" class="logo">SummerRio</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="size-guide.html">Size Guide</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-icons">
+                <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Drawers & Overlay -->
+    <div class="mobile-menu"><span class="close-menu">&times;</span><a href="index.html">Home</a></div>
+    <div class="overlay"></div>
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Bag</h3><span class="close-cart">&times;</span>
+        </div>
+        <div class="cart-items"></div>
+    </div>
+
+    <div class="container section" style="padding-top: 120px;">
+        <h1 class="text-center">Size Guide</h1>
+        <p class="text-center" style="max-width: 600px; margin: 0 auto 3rem;">Find your perfect fit. Our sizing is
+            designed to hug natural curves. If you are between sizes, we recommend sizing up for comfort.</p>
+
+        <!-- Anchors -->
+        <div class="sg-nav">
+            <a href="#how-to-measure">How to Measure</a>
+            <a href="#tables">Size Tables</a>
+            <a href="#conversion">Conversion</a>
+        </div>
+
+        <!-- How to Measure -->
+        <div id="how-to-measure" class="sg-section grid" style="grid-template-columns: 1fr 1fr; gap: 3rem;">
+            <div>
+                <div class="placeholder-img" style="aspect-ratio:3/4;">Start Measuring Image</div>
+            </div>
+            <div>
+                <h3>How to Measure</h3>
+                <ul style="list-style: disc; padding-left: 1.5rem; line-height: 2;">
+                    <li><strong>Bust:</strong> Measure around the fullest part of your chest.</li>
+                    <li><strong>Underbust:</strong> Measure directly under your bust where the band sits.</li>
+                    <li><strong>Waist:</strong> Measure around the smallest part of your waistline.</li>
+                    <li><strong>Hips:</strong> Measure around the fullest part of your hips/glutes.</li>
+                    <li><strong>Torso:</strong> Measure from shoulder to between legs and back up to shoulder (loop).
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Tables -->
+        <div id="tables" class="sg-section">
+            <h3 class="text-center" style="margin-bottom: 2rem;">Size Charts (in cm)</h3>
+
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <button class="btn btn-outline unit-selector" data-unit="AU">AU</button>
+                <button class="btn btn-outline unit-selector" data-unit="BR">BR</button>
+                <button class="btn btn-outline unit-selector" data-unit="INTL">International</button>
+            </div>
+
+            <!-- AU Table -->
+            <div class="size-table" data-unit="AU">
+                <h4 class="text-center">Australian Sizing (cm)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Bust</th>
+                            <th>Waist</th>
+                            <th>Hips</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>6 (XS)</td>
+                            <td>80</td>
+                            <td>63</td>
+                            <td>88</td>
+                        </tr>
+                        <tr>
+                            <td>8 (S)</td>
+                            <td>85</td>
+                            <td>68</td>
+                            <td>93</td>
+                        </tr>
+                        <tr>
+                            <td>10 (M)</td>
+                            <td>90</td>
+                            <td>73</td>
+                            <td>98</td>
+                        </tr>
+                        <tr>
+                            <td>12 (L)</td>
+                            <td>95</td>
+                            <td>78</td>
+                            <td>103</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- BR Table -->
+            <div class="size-table" data-unit="BR" style="display:none;">
+                <h4 class="text-center">Brazilian Sizing (cm)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Bust</th>
+                            <th>Waist</th>
+                            <th>Hips</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>P (36-38)</td>
+                            <td>82-86</td>
+                            <td>64-68</td>
+                            <td>90-94</td>
+                        </tr>
+                        <tr>
+                            <td>M (40-42)</td>
+                            <td>86-90</td>
+                            <td>68-72</td>
+                            <td>94-98</td>
+                        </tr>
+                        <tr>
+                            <td>G (44)</td>
+                            <td>90-94</td>
+                            <td>72-76</td>
+                            <td>98-102</td>
+                        </tr>
+                        <tr>
+                            <td>GG (46)</td>
+                            <td>94-98</td>
+                            <td>76-80</td>
+                            <td>102-106</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- INTL Table -->
+            <div class="size-table" data-unit="INTL" style="display:none;">
+                <h4 class="text-center">International General (cm)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Size</th>
+                            <th>Bust</th>
+                            <th>Waist</th>
+                            <th>Hips</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>XS</td>
+                            <td>80-84</td>
+                            <td>60-64</td>
+                            <td>88-92</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td>84-88</td>
+                            <td>64-68</td>
+                            <td>92-96</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>88-92</td>
+                            <td>68-72</td>
+                            <td>96-100</td>
+                        </tr>
+                        <tr>
+                            <td>L</td>
+                            <td>92-96</td>
+                            <td>72-76</td>
+                            <td>100-104</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-center" style="margin-top: 1rem; color: #777;">*Between sizes? We suggest sizing up for a
+                more comfortable fit.</p>
+        </div>
+
+        <!-- Conversion -->
+        <div id="conversion" class="sg-section">
+            <h3 class="text-center" style="margin-bottom: 1rem;">International Conversions</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Intl</th>
+                            <th>AU</th>
+                            <th>US</th>
+                            <th>EU</th>
+                            <th>BR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>XS</td>
+                            <td>6</td>
+                            <td>2</td>
+                            <td>34</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>S</td>
+                            <td>8</td>
+                            <td>4</td>
+                            <td>36</td>
+                            <td>38</td>
+                        </tr>
+                        <tr>
+                            <td>M</td>
+                            <td>10</td>
+                            <td>6</td>
+                            <td>38</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>L</td>
+                            <td>12</td>
+                            <td>8</td>
+                            <td>40</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>XL</td>
+                            <td>14</td>
+                            <td>10</td>
+                            <td>42</td>
+                            <td>44</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center"> &copy; 2024 SummerRio Swimwear. </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+<!-- shop.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | SummerRio Swimwear</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Reuse Header (In a real app this would be a component) -->
+    <header>
+        <div class="container nav-container">
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <a href="index.html" class="logo">SummerRio</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="size-guide.html">Size Guide</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-icons">
+                <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu / Cart Drawer / Overlay -->
+    <div class="mobile-menu">
+        <span class="close-menu">&times;</span>
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About</a>
+        <a href="size-guide.html">Size Guide</a>
+        <a href="contact.html">Contact</a>
+    </div>
+    <div class="overlay"></div>
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3>
+            <span class="close-cart" style="cursor:pointer">&times;</span>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="flex justify-between" style="margin-bottom: 1rem;"><span>Total</span><span
+                    class="cart-total-price">$0.00</span></div>
+            <button class="btn btn-primary" style="width: 100%">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Shop Content -->
+    <div class="container section" style="padding-top: 120px;">
+        <h1 class="text-center">Shop All</h1>
+
+        <!-- Filters Toolbar -->
+        <div class="flex justify-between align-center"
+            style="margin: 2rem 0; padding: 1rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+            <div class="flex gap-md">
+                <select style="border:none; background:transparent; font-family:var(--font-sans);">
+                    <option>Category: All</option>
+                    <option>Bikinis</option>
+                    <option>One Pieces</option>
+                </select>
+                <select style="border:none; background:transparent; font-family:var(--font-sans);">
+                    <option>Size: All</option>
+                    <option>S</option>
+                    <option>M</option>
+                </select>
+                <select style="border:none; background:transparent; font-family:var(--font-sans);">
+                    <option>Color: All</option>
+                    <option>Black</option>
+                    <option>White</option>
+                </select>
+            </div>
+            <div>
+                <select style="border:none; background:transparent; font-family:var(--font-sans);">
+                    <option>Sort by: Featured</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Product Grid (8 items) -->
+        <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 3rem;">
+
+            <!-- Item 1 -->
+            <div class="product-card">
+                <a href="product.html">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Img 1</div>
+                    <h3 class="product-title">Copacabana Set</h3>
+                    <p class="product-price">$120.00</p>
+                </a>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="product-card">
+                <a href="product.html">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Img 2</div>
+                    <h3 class="product-title">Ipanema One Piece</h3>
+                    <p class="product-price">$145.00</p>
+                </a>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="product-card">
+                <a href="product.html">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Img 3</div>
+                    <h3 class="product-title">Leblon Top</h3>
+                    <p class="product-price">$65.00</p>
+                </a>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="product-card">
+                <a href="product.html">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Img 4</div>
+                    <h3 class="product-title">Leblon Bottom</h3>
+                    <p class="product-price">$60.00</p>
+                </a>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="product-card">
+                <a href="product.html">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Img 5</div>
+                    <h3 class="product-title">Azul Deep Dive</h3>
+                    <p class="product-price">$135.00</p>
+                </a>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="product-card">
+                <a href="product.html">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Img 6</div>
+                    <h3 class="product-title">Terra Triangle</h3>
+                    <p class="product-price">$110.00</p>
+                </a>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="product-card">
+                <a href="product.html">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Img 7</div>
+                    <h3 class="product-title">Sol Bandeau</h3>
+                    <p class="product-price">$115.00</p>
+                </a>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="product-card">
+                <a href="product.html">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Img 8</div>
+                    <h3 class="product-title">Luna High-Waist</h3>
+                    <p class="product-price">$125.00</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            &copy; 2024 SummerRio Swimwear.
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

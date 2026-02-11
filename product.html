@@ -1,0 +1,253 @@
+<!-- product.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copacabana Set | SummerRio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .thumbs {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100px;
+        }
+
+        .main-img {
+            flex: 1;
+            aspect-ratio: 3/4;
+        }
+
+        .thumb {
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.3s;
+        }
+
+        .thumb:hover {
+            opacity: 1;
+        }
+
+        .product-info h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .rating {
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        @media(max-width: 768px) {
+            .product-grid-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                flex-direction: column-reverse;
+            }
+
+            .thumbs {
+                flex-direction: row;
+                width: 100%;
+            }
+
+            .thumbs .thumb {
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <a href="index.html" class="logo">SummerRio</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="size-guide.html">Size Guide</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-icons">
+                <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Drawers -->
+    <div class="mobile-menu">
+        <span class="close-menu">&times;</span>
+        <a href="index.html">Home</a><a href="shop.html">Shop</a><a href="about.html">About</a>
+    </div>
+    <div class="overlay"></div>
+    <div class="cart-drawer">
+        <div class="cart-header">
+            <h3>Shopping Bag</h3><span class="close-cart" style="cursor:pointer">&times;</span>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-footer">
+            <div class="flex justify-between" style="margin-bottom: 1rem;"><span>Total</span><span
+                    class="cart-total-price">$0.00</span></div>
+            <button class="btn btn-primary" style="width: 100%">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container section" style="padding-top: 120px;">
+        <div class="product-grid-layout">
+            <!-- Gallery -->
+            <div class="gallery">
+                <div class="thumbs">
+                    <div class="thumb placeholder-img">1</div>
+                    <div class="thumb placeholder-img">2</div>
+                    <div class="thumb placeholder-img">3</div>
+                </div>
+                <div class="main-img placeholder-img">Main Image</div>
+            </div>
+
+            <!-- Details -->
+            <div class="product-info">
+                <h1>Copacabana Set</h1>
+                <p class="price" style="font-size: 1.2rem; margin-bottom: 0.5rem;">$120.00</p>
+                <div class="rating">★★★★★ (24 Reviews)</div>
+                <p style="margin-bottom: 2rem;">A timeless two-piece set featuring our signature ribbed fabric. Seamless
+                    construction for maximum comfort and a flattering fit that hugs your curves.</p>
+
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; margin-bottom: 0.5rem;">Size</label>
+                    <select class="size-select"
+                        style="width: 100%; padding: 1rem; border: 1px solid var(--color-border); background: #fff;">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M" selected>M</option>
+                        <option value="L">L</option>
+                    </select>
+                    <div style="margin-top: 0.5rem; display: flex; justify-content: space-between;">
+                        <a href="#" onclick="document.querySelector('.modal').classList.add('active');"
+                            style="text-decoration: underline; font-size: 0.8rem;">View Size Guide</a>
+                        <a href="size-guide.html"
+                            style="text-decoration: underline; font-size: 0.8rem; color: #999;">Full Guide</a>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary add-to-cart-btn" style="width: 100%; margin-bottom: 2rem;" data-id="1"
+                    data-name="Copacabana Set" data-price="120.00" data-image="">
+                    Add to Bag
+                </button>
+
+                <div class="details">
+                    <h4 style="border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">Details & Care</h4>
+                    <ul style="padding-left: 1rem; margin-top: 0.5rem; font-size: 0.9rem;">
+                        <li>80% Recycled Nylon, 20% Elastane</li>
+                        <li>Hand wash cold, dry flat in shade</li>
+                        <li>Made in Brazil</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Related products -->
+        <div style="margin-top: 4rem;">
+            <h3 class="text-center">You May Also Like</h3>
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem;">
+                <div class="product-card">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Related 1</div>
+                    <h4>Related Item</h4>
+                </div>
+                <div class="product-card">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Related 2</div>
+                    <h4>Related Item</h4>
+                </div>
+                <div class="product-card">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Related 3</div>
+                    <h4>Related Item</h4>
+                </div>
+                <div class="product-card">
+                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Related 4</div>
+                    <h4>Related Item</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Size Guide Modal -->
+    <div class="modal">
+        <span class="modal-close">&times;</span>
+        <h2 class="text-center">Size Guide</h2>
+        <p class="text-center" style="margin-bottom: 1rem;">Select your measuring unit</p>
+
+        <div class="text-center" style="margin-bottom: 1.5rem;">
+            <button class="btn btn-outline unit-selector" data-unit="AU">AU</button>
+            <button class="btn btn-outline unit-selector" data-unit="BR">BR</button>
+            <button class="btn btn-outline unit-selector" data-unit="INTL">International</button>
+        </div>
+
+        <table class="size-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: #f9f9f9;">
+                    <th style="padding: 10px; border: 1px solid #ddd;">Size</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Bust (cm)</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Waist (cm)</th>
+                    <th style="padding: 10px; border: 1px solid #ddd;">Hips (cm)</th>
+                </tr>
+            </thead>
+            <!-- Generic Table Body - JS will toggle visibility based on unit logic if we had distinct tables, here simplified for modal -->
+            <tbody>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">XS</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">80-84</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">60-64</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">88-92</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">S</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">84-88</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">64-68</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">92-96</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">M</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">88-92</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">68-72</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">96-100</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px; border: 1px solid #ddd;">L</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">92-96</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">72-76</td>
+                    <td style="padding: 10px; border: 1px solid #ddd;">100-104</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="text-center" style="margin-top: 1rem;"><a href="size-guide.html"
+                style="text-decoration: underline;">View Full Size Guide</a></p>
+    </div>
+
+    <!-- Footer Comp -->
+    <footer>
+        <div class="container text-center"> &copy; 2024 SummerRio Swimwear. </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
