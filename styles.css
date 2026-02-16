@@ -137,6 +137,10 @@ header {
   align-items: center;
 }
 
+body {
+  padding-top: var(--header-height);
+}
+
 .nav-container {
   width: 100%;
   display: flex;
@@ -506,4 +510,99 @@ footer {
 .product-card:hover .product-img {
   transform: scale(1.06);
 }
+
+/* Fix: mobile clicks on nav */
+header, nav, .nav-container, .nav-links, .nav-links a {
+  pointer-events: auto !important;
+}
+
+header::before, header::after,
+.logo::before, .logo::after {
+  pointer-events: none !important;
+}
+
+/* If you have any overlay/backdrop for cart/menu */
+.overlay, .backdrop, .modal, .drawer-overlay {
+  pointer-events: none;
+}
+
+.overlay.is-open, .backdrop.is-open, .modal.is-open, .drawer-overlay.is-open {
+  pointer-events: auto;
+}
+
+header {
+  z-index: 9999;
+}
+
+header::before,
+header::after,
+.logo::before,
+.logo::after {
+  pointer-events: none;
+}
+
+/* FIX overlay blocking clicks */
+.overlay {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* MOBILE MENU - start hidden */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #f5f2ec; /* sua cor areia */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  pointer-events: none;
+  z-index: 3000;
+}
+
+/* when open */
+.mobile-menu.active {
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.menu-overlay,
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 2500;
+}
+
+.menu-overlay.active,
+.cart-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* FORCE mobile menu hidden by default */
+.mobile-menu {
+  transform: translateX(-100%) !important;
+  pointer-events: none !important;
+}
+
+.mobile-menu.active {
+  transform: translateX(0) !important;
+  pointer-events: auto !important;
+}
+
+
+
 

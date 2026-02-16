@@ -9,7 +9,8 @@ const state = {
 
 // DOM Elements
 const cartDrawer = document.querySelector('.cart-drawer');
-const overlay = document.querySelector('.overlay');
+const menuOverlay = document.querySelector('.menu-overlay');
+const cartOverlay = document.querySelector('.cart-overlay');
 const mobileMenu = document.querySelector('.mobile-menu');
 const cartCount = document.querySelector('.cart-count');
 const cartItemsContainer = document.querySelector('.cart-items');
@@ -66,25 +67,28 @@ function initEventListeners() {
 // UI Functions
 function toggleMobileMenu() {
     mobileMenu.classList.toggle('active');
-    overlay.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
 }
 
 function toggleCart() {
     cartDrawer.classList.toggle('active');
-    overlay.classList.toggle('active');
+    cartOverlay.classList.toggle('active');
 }
 
 function closeAllDrawers() {
     mobileMenu?.classList.remove('active');
     cartDrawer?.classList.remove('active');
+    menuOverlay?.classList.remove('active');
+    cartOverlay?.classList.remove('active');
     document.querySelector('.modal')?.classList.remove('active');
-    overlay.classList.remove('active');
 }
 
 function closeModal() {
-    document.querySelector('.modal').classList.remove('active');
+    document.querySelector('.modal')?.classList.remove('active');
+
     if (!cartDrawer.classList.contains('active')) {
-        overlay.classList.remove('active');
+        cartOverlay?.classList.remove('active');
+        menuOverlay?.classList.remove('active');
     }
 }
 
