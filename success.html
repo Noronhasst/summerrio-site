@@ -1,0 +1,80 @@
+<!-- success.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | SummerRio Swimwear</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .success-page {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .success-page h1 {
+            margin-bottom: 1rem;
+        }
+
+        .success-page p {
+            max-width: 500px;
+            margin: 0 auto 2rem;
+            color: var(--color-text-light);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+            <div class="hamburger"><span></span><span></span><span></span></div>
+            <a href="index.html" class="logo">SummerRio</a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="about.html">About</a>
+                <a href="size-guide.html">Size Guide</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-icons">
+                <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Success Content -->
+    <div class="success-page">
+        <div>
+            <div class="success-icon">✨</div>
+            <h1>Thank You for Your Order!</h1>
+            <p>Your payment has been received. We're preparing your SummerRio pieces with care. You'll receive a
+                confirmation email shortly with tracking details.</p>
+            <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">&copy; 2025 SummerRio Swimwear.</div>
+    </footer>
+
+    <script>
+        // Clear cart after successful payment
+        localStorage.removeItem('summerrio_cart');
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

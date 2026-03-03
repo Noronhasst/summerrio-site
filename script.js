@@ -28,7 +28,7 @@ function initEventListeners() {
     // Mobile Menu
     document.querySelector('.hamburger')?.addEventListener('click', toggleMobileMenu);
     document.querySelector('.close-menu')?.addEventListener('click', toggleMobileMenu);
-    
+
     // Cart Drawer
     document.querySelector('.cart-icon')?.addEventListener('click', toggleCart);
     document.querySelector('.close-cart')?.addEventListener('click', toggleCart);
@@ -140,27 +140,90 @@ function updateCartUI() {
         const total = state.cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
         cartTotal.textContent = '$' + total.toFixed(2);
     }
+
+    // Update checkout button state
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.disabled = state.cart.length === 0;
+        checkoutBtn.style.opacity = state.cart.length === 0 ? '0.5' : '1';
+    }
+}
+
+// Quantity Update
+function updateQty(id, size, delta) {
+    const item = state.cart.find(p => p.id === id && p.size === size);
+    if (!item) return;
+    item.qty += delta;
+    if (item.qty <= 0) {
+        removeFromCart(id, size);
+        return;
+    }
+    saveCart();
+    updateCartUI();
+}
+
+// Checkout — Stripe Integration
+async function checkout() {
+    if (state.cart.length === 0) return;
+
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    if (checkoutBtn) {
+        checkoutBtn.disabled = true;
+        checkoutBtn.textContent = 'Processing...';
+    }
+
+    try {
+        const response = await fetch('/.netlify/functions/create-checkout-session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                items: state.cart.map(item => ({
+                    name: item.name,
+                    price: item.price,
+                    qty: item.qty,
+                    size: item.size,
+                })),
+            }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(data.error || 'Checkout failed.');
+        }
+
+        // Redirect to Stripe Checkout
+        window.location.href = data.url;
+
+    } catch (error) {
+        console.error('Checkout error:', error);
+        alert('Something went wrong. Please try again.');
+        if (checkoutBtn) {
+            checkoutBtn.disabled = false;
+            checkoutBtn.textContent = 'Checkout';
+        }
+    }
 }
 
 // Size Guide Logic
 function initSizeGuide() {
     const unitSelectors = document.querySelectorAll('.unit-selector');
-    
+
     // Set initial active state
     updateSizeTables(state.sizeUnit);
-    
+
     unitSelectors.forEach(btn => {
-        if(btn.dataset.unit === state.sizeUnit) btn.classList.add('active');
-        
+        if (btn.dataset.unit === state.sizeUnit) btn.classList.add('active');
+
         btn.addEventListener('click', (e) => {
             // Update state
             state.sizeUnit = e.target.dataset.unit;
             localStorage.setItem('summerrio_size_pref', state.sizeUnit);
-            
+
             // Update UI buttons
             unitSelectors.forEach(b => b.classList.remove('active'));
             e.target.classList.add('active');
-            
+
             // Update Tables
             updateSizeTables(state.sizeUnit);
         });

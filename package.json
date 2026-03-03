@@ -1,0 +1,9 @@
+{
+    "name": "summerrio-site",
+    "version": "1.0.0",
+    "description": "SummerRio Swimwear - Luxury Beachwear",
+    "private": true,
+    "dependencies": {
+        "stripe": "^20.3.1"
+    }
+}
