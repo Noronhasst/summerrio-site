@@ -168,7 +168,8 @@ async function checkout() {
 
     } catch (error) {
         console.error('Checkout error:', error);
-        alert('Something went wrong. Please try again.');
+        const msg = error.message || 'Something went wrong. Please try again.';
+        alert(msg);
         if (checkoutBtn) {
             checkoutBtn.disabled = false;
             checkoutBtn.textContent = 'Checkout';
