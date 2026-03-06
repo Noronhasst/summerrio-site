@@ -1,76 +1,55 @@
-<!-- cancel.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Cancelled | SummerRio Swimwear</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .cancel-page {
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 80px;
-        }
-
-        .cancel-icon {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cancel-page h1 {
-            margin-bottom: 1rem;
-        }
-
-        .cancel-page p {
-            max-width: 500px;
-            margin: 0 auto 2rem;
-            color: var(--color-text-light);
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Cancelled | Summer Rio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <div class="hamburger"><span></span><span></span><span></span></div>
-            <a href="index.html" class="logo">SummerRio</a>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="about.html">About</a>
-                <a href="size-guide.html">Size Guide</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <div class="nav-icons">
-                <div class="cart-icon">🛒 <span class="cart-count">0</span></div>
-            </div>
+    <!-- Nav -->
+    <div class="announcement-bar">
+        <p>Free shipping on orders over $99 — Discover the Sydney Summer Collection</p>
+    </div>
+    <nav class="navbar">
+        <div class="nav-left">
+            <a href="index.html#shop">Shop</a>
+            <a href="index.html#collections">Collections</a>
         </div>
-    </header>
+        <div class="nav-logo">
+            <a href="index.html">Summer Rio</a>
+        </div>
+        <div class="nav-right">
+            <a href="index.html">Home</a>
+        </div>
+    </nav>
 
     <!-- Cancel Content -->
-    <div class="cancel-page">
+    <div class="status-page">
         <div>
-            <div class="cancel-icon">🛍️</div>
+            <div class="status-icon">🛍️</div>
             <h1>Payment Cancelled</h1>
             <p>No worries — your items are still in your bag. When you're ready, you can pick up right where you left
                 off.</p>
-            <a href="shop.html" class="btn btn-primary">Back to Shop</a>
+            <a href="index.html#shop" class="btn btn-primary">Back to Shop</a>
         </div>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container text-center">&copy; 2025 SummerRio Swimwear.</div>
+    <footer class="footer">
+        <div class="container" style="text-align:center; padding: 2rem 0;">
+            <p style="opacity:.6; font-size:.82rem;">© 2025 Summer Rio. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 
 </html>

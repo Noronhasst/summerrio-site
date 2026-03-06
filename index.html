@@ -1,268 +1,516 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SummerRio Swimwear | Luxury Beachwear</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Home Specific Styles */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
-                linear-gradient(45deg, #e6e6e6, #f5f5f0);
-            /* Placeholder */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-top: -80px;
-            /* Offset header */
-        }
-
-        .hero-content h1 {
-            font-size: 4rem;
-            color: var(--color-primary);
-            margin-bottom: 1rem;
-        }
-
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .value-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Summer Rio — Sun, Sand & Style</title>
+    <meta name="description"
+        content="Summer Rio — Brazilian-cut swimwear designed for movement, sun and saltwater. Sustainable luxury beachwear born in Sydney, inspired by Brazil." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
-            <div class="hamburger">
-                <span></span><span></span><span></span>
-            </div>
-            <a href="index.html" class="logo">SummerRio</a>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="about.html">Our Story</a>
-                <a href="size-guide.html">Size Guide</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-
-            <div class="nav-icons">
-                <div class="cart-icon">
-                    🛒 <span class="cart-count">0</span>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <span class="close-menu">&times;</span>
-        <a href="index.html">Home</a>
-        <a href="shop.html">Shop</a>
-        <a href="about.html">About</a>
-        <a href="size-guide.html">Size Guide</a>
-        <a href="contact.html">Contact</a>
+    <!-- ── ANNOUNCEMENT BAR ── -->
+    <div class="announcement-bar">
+        <p>Free shipping on orders over $99 — Discover the Sydney Summer Collection</p>
     </div>
 
-    <!-- Cart Drawer -->
-    <div class="menu-overlay"></div>
+    <!-- ── NAVIGATION ── -->
+    <nav class="navbar">
+        <button class="hamburger-btn" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-left">
+            <a href="#shop">Shop</a>
+            <a href="#collections">Collections</a>
+            <a href="#about">Journal</a>
+        </div>
+        <div class="nav-logo">
+            <a href="#">Summer Rio</a>
+        </div>
+        <div class="nav-right">
+            <a href="#">Search</a>
+            <a href="#">Wishlist</a>
+            <a href="#" class="bag-link">Bag (0)</a>
+        </div>
+    </nav>
+
+    <!-- ── MOBILE MENU ── -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu">
+        <button class="close-mobile" aria-label="Close menu">&times;</button>
+        <a href="#shop">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#about">Journal</a>
+        <a href="#">Search</a>
+        <a href="#">Wishlist</a>
+    </div>
+
+    <!-- ── CART DRAWER ── -->
     <div class="cart-overlay"></div>
     <div class="cart-drawer">
         <div class="cart-header">
             <h3>Shopping Bag</h3>
-            <span class="close-cart" style="cursor:pointer">&times;</span>
+            <button class="close-cart" aria-label="Close cart">&times;</button>
         </div>
         <div class="cart-items">
-            <!-- Items injected by JS -->
-            <p class="text-center" style="margin-top: 2rem; color: #999;">Your bag is empty.</p>
+            <p class="cart-empty">Your bag is empty.</p>
         </div>
         <div class="cart-footer">
-            <div class="flex justify-between" style="margin-bottom: 1rem;">
+            <div class="cart-total-row">
                 <span>Total</span>
                 <span class="cart-total-price">$0.00</span>
             </div>
-            <button class="btn btn-primary checkout-btn" style="width: 100%" onclick="checkout()">
-                Checkout
-            </button>
-
+            <button class="checkout-btn" onclick="checkout()" disabled>Checkout</button>
         </div>
     </div>
 
-    <!-- Hero -->
+    <!-- ── HERO ── -->
     <section class="hero">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1555617135-8724b69f766c?w=1800&q=85&fit=crop"
+                alt="Woman in bikini on Sydney beach" class="hero-img" />
+            <div class="hero-overlay"></div>
+        </div>
         <div class="hero-content">
-            <h1>SummerRio Swimwear</h1>
-            <p style="margin-bottom: 2rem; font-size: 1.2rem;">
-                Bikinis designed for real bodies, made for endless summers.
-            </p>
-            <a href="shop.html" class="btn btn-primary">Shop the Collection</a>
+            <span class="hero-tag">New Collection — Summer 2025</span>
+            <h1 class="hero-title">Born for the<br /><em>Sydney Shore</em></h1>
+            <p class="hero-subtitle">Brazilian-cut swimwear designed for movement, sun and saltwater.</p>
+            <div class="hero-ctas">
+                <a href="#shop" class="btn btn-primary">Shop The Brasileira</a>
+                <a href="#about" class="btn btn-ghost">Explore the Story</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- 
- Collection -->
-    <section class="section container">
-        <h2 class="text-center" style="margin-bottom: 3rem;">Latest Drop</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <a href="product.html" class="product-link">
-                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">
-                        Signature Set
-                    </div>
-
-                    <h3 class="product-title">Copacabana Set</h3>
-                    <p class="product-price">$129.00</p>
-                </a>
-            </div>
-            <!-- Product 2 -->
-            <div class="product-card">
-                <a href="product.html" class="product-link">
-                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">
-                        Signature Set
-                    </div>
-                    <h3 class="product-title">Copacabana Set</h3>
-                    <p class="product-price">A$120.00</p>
-                </a>
-            </div>
-            <!-- Product 3 -->
-            <div class="product-card">
-                <a href="product.html" class="product-link">
-                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">
-                        Bikini Top
-                    </div>
-                    <h3 class="product-title">Leblon Top</h3>
-                    <p class="product-price">$65.00</p>
-                </a>
-            </div>
-            <!-- Product 4 -->
-            <div class="product-card">
-                <a href="product.html" class="product-link">
-                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">
-                        Bikini Bottom
-                    </div>
-                    <h3 class="product-title">Leblon Bottom</h3>
-                    <p class="product-price">$60.00</p>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Values -->
-    <section class="section" style="background-color: #fff;">
+    <!-- ── PRODUCT SPOTLIGHT ── -->
+    <section class="product-spotlight fade-in" id="shop">
         <div class="container">
-            <div class="values-grid">
-                <div class="value-card">
-                    <h3>Sustainable Luxe</h3>
-                    <p>Crafted from recycled premium fabrics that feel like a second skin.</p>
+            <div class="section-header">
+                <h2>The Brasileira</h2>
+                <span class="tag-pill">Bestseller</span>
+            </div>
+            <div class="spotlight-grid">
+                <div class="spotlight-images">
+                    <div class="img-main">
+                        <img src="https://images.unsplash.com/photo-1694414934055-55ddff1d825b?w=700&q=80&fit=crop&crop=top"
+                            alt="The Brasileira Bikini — Sydney Beach" />
+                    </div>
+                    <div class="img-row">
+                        <img src="https://images.unsplash.com/photo-1700131299842-9be23d5fa77b?w=400&q=80&fit=crop"
+                            alt="The Brasileira — Sydney beach" />
+                        <img src="https://images.unsplash.com/photo-1700131299909-af5e02bc7c3c?w=400&q=80&fit=crop"
+                            alt="The Brasileira — editorial detail" />
+                    </div>
                 </div>
-                <div class="value-card">
-                    <h3>Timeless Design</h3>
-                    <p>Minimalist cuts that transcend trends and seasons.</p>
-                </div>
-                <div class="value-card">
-                    <h3>Perfect Fit</h3>
-                    <p>Engineered to flatter every curve with diverse sizing options.</p>
+                <div class="spotlight-info">
+                    <p class="recycled-label">♻ Recycled Nylon Blend · Brazilian Cut</p>
+                    <h3>The Brasileira Bikini</h3>
+                    <div class="price-row">
+                        <span class="price">$89</span>
+                        <span class="original-price">$110</span>
+                    </div>
+                    <div class="stars">★★★★★ <span>48 reviews · Over 2,500 sold · Seen on Bondi Beach</span></div>
+                    <p class="low-stock">⚡ Only 4 left in Ipanema Sand — S &amp; M</p>
+
+                    <div class="color-section">
+                        <p class="label">Colour — <strong>Ipanema Sand</strong></p>
+                        <div class="color-swatches">
+                            <div class="swatch-item">
+                                <button class="swatch active" style="background:#d4b896" title="Ipanema Sand"></button>
+                                <span class="swatch-name">Ipanema Sand</span>
+                            </div>
+                            <div class="swatch-item">
+                                <button class="swatch" style="background:#2d5f7c" title="Copacabana Blue"></button>
+                                <span class="swatch-name">Copacabana Blue</span>
+                            </div>
+                            <div class="swatch-item">
+                                <button class="swatch" style="background:#b5342a" title="Carnaval Red"></button>
+                                <span class="swatch-name">Carnaval Red</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="size-section">
+                        <p class="label">Size</p>
+                        <div class="size-grid">
+                            <button class="size-btn">XS</button>
+                            <button class="size-btn active">S</button>
+                            <button class="size-btn">M</button>
+                            <button class="size-btn">L</button>
+                            <button class="size-btn">XL</button>
+                        </div>
+                        <a href="size-guide.html" class="size-guide">Size Guide →</a>
+                    </div>
+
+                    <button class="btn btn-add">Add to Bag</button>
+
+                    <div class="badges">
+                        <span>🚚 Free Shipping $99+</span>
+                        <span>🔄 Free Returns</span>
+                        <span>🌊 Chlorine Resistant</span>
+                    </div>
+
+                    <div class="product-details">
+                        <details>
+                            <summary>Fit</summary>
+                            <ul>
+                                <li>Brazilian cut — high-leg, cheeky coverage</li>
+                                <li>Adjustable tie straps for a customised fit</li>
+                                <li>Removable padding cups</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Fabric</summary>
+                            <ul>
+                                <li>78% recycled nylon, 22% elastane</li>
+                                <li>UPF 50+ sun protection</li>
+                                <li>Chlorine &amp; saltwater resistant</li>
+                                <li>Quick-dry technology</li>
+                            </ul>
+                        </details>
+                        <details>
+                            <summary>Care</summary>
+                            <ul>
+                                <li>Hand wash cold or gentle machine wash</li>
+                                <li>Do not tumble dry</li>
+                                <li>Rinse after each use</li>
+                            </ul>
+                        </details>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Best Sellers -->
-    <section class="section container">
-        <h2 class="text-center" style="margin-bottom: 3rem;">Best Sellers</h2>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-            <!-- Repeat Similar Structure -->
-            <div class="product-card">
-                <a href="product.html">
-                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Classic Black</div>
-                    <h3 class="product-title">Noir Essential</h3>
-                    <p class="product-price">$110.00</p>
-                </a>
-            </div>
-            <div class="product-card">
-                <a href="product.html">
-                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">White Sand</div>
-                    <h3 class="product-title">Blanc Textuered</h3>
-                    <p class="product-price">$130.00</p>
-                </a>
-            </div>
-            <div class="product-card">
-                <a href="product.html">
-                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Olive Green</div>
-                    <h3 class="product-title">Amazonia Dive</h3>
-                    <p class="product-price">$125.00</p>
-                </a>
-            </div>
-            <div class="product-card">
-                <a href="product.html">
-                    <div class="product-img placeholder-img" style="aspect-ratio:3/4;">Terracotta</div>
-                    <h3 class="product-title">Sunset Glow</h3>
-                    <p class="product-price">$115.00</p>
-                </a>
-            </div>
+    <!-- ── BEACH LIFESTYLE BANNER ── -->
+    <section class="lifestyle-banner">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1800&q=85&fit=crop"
+            alt="Sydney beach lifestyle" class="lifestyle-img" />
+        <div class="lifestyle-overlay"></div>
+        <div class="lifestyle-content">
+            <h2>"Made for the ocean.<br /><em>Built to last.</em>"</h2>
+            <a href="#shop" class="btn btn-white">Shop The Brasileira</a>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
+    <!-- ── THREE COLOURS ── -->
+    <section class="most-popular fade-in" id="collections">
         <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Shop</h4>
-                    <ul>
-                        <li><a href="shop.html">All Swim</a></li>
-                        <li><a href="shop.html">New Arrivals</a></li>
-                        <li><a href="shop.html">Best Sellers</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="size-guide.html">Size Guide</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="policy.html">Shipping & Returns</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="policy.html">Privacy Policy</a></li>
-                        <li><a href="policy.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Newsletter</h4>
-                    <p style="margin-bottom: 1rem; opacity: 0.8; font-size: 0.9rem;">Subscribe for exclusive offers and
-                        updates.</p>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address">
-                        <button type="submit">Subscribe</button>
-                    </form>
-                </div>
+            <div class="section-header-centered">
+                <h2>Three Colours. One Bikini.</h2>
+                <p>The Brasileira — Ipanema Sand · Copacabana Blue · Carnaval Red</p>
             </div>
-            <div class="text-center"
-                style="opacity: 0.6; font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
-                &copy; 2024 SummerRio Swimwear. All rights reserved.
+            <div class="products-grid three-col">
+
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1570976447640-ac859083963f?w=500&q=80&fit=crop&crop=top"
+                            alt="The Brasileira — Ipanema Sand" />
+                        <span class="card-tag">Sand</span>
+                        <button class="quick-add">+ Quick Add</button>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Brasileira — Ipanema Sand</h4>
+                        <p class="card-price">$89 <span class="strike">$110</span></p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1760473200349-4c25a37d2a47?w=500&q=80&fit=crop&crop=top"
+                            alt="The Brasileira — Copacabana Blue" />
+                        <span class="card-tag" style="background:#2d5f7c;">Blue</span>
+                        <button class="quick-add">+ Quick Add</button>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Brasileira — Copacabana Blue</h4>
+                        <p class="card-price">$89 <span class="strike">$110</span></p>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1584431620769-c5d32b5f936b?w=500&q=80&fit=crop&crop=top"
+                            alt="The Brasileira — Carnaval Red" />
+                        <span class="card-tag" style="background:#b5342a;">Red</span>
+                        <button class="quick-add">+ Quick Add</button>
+                    </div>
+                    <div class="card-info">
+                        <h4>The Brasileira — Carnaval Red</h4>
+                        <p class="card-price">$89 <span class="strike">$110</span></p>
+                    </div>
+                </div>
+
             </div>
         </div>
+    </section>
+
+    <!-- ── SUSTAINABILITY ── -->
+    <section class="sustainability fade-in" id="about">
+        <div class="container sustain-grid">
+            <div class="sustain-text">
+                <span class="tag-label">Our Commitment</span>
+                <h2>Crafted with the ocean in mind</h2>
+                <p>Every Summer Rio piece begins in the ocean — rescued from abandoned fishing nets and plastic waste,
+                    transformed into the fabric you wear. We believe swimwear should give back to the same waters we
+                    love.</p>
+                <ul class="sustain-list">
+                    <li>♻ 100% recycled nylon from ocean waste</li>
+                    <li>🌊 Active partner of ocean clean-up initiatives</li>
+                    <li>🏭 Ethical factories, fair wages</li>
+                    <li>📦 Plastic-free packaging</li>
+                </ul>
+                <a href="#" class="btn btn-outline">Learn More</a>
+            </div>
+            <div class="sustain-img">
+                <img src="https://images.unsplash.com/photo-1476703993599-0035a21b17a9?w=700&q=80&fit=crop"
+                    alt="Ocean" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ── REVIEWS ── -->
+    <section class="reviews-section fade-in">
+        <div class="container">
+            <div class="reviews-header">
+                <div>
+                    <h2>Customer Reviews</h2>
+                    <div class="overall-rating">
+                        <span class="big-score">4.8</span>
+                        <div>
+                            <div class="stars large">★★★★★</div>
+                            <p>Based on 286 reviews</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-outline">Write a Review</button>
+            </div>
+
+            <div class="rating-bars">
+                <div class="bar-row"><span>5 ★</span>
+                    <div class="bar">
+                        <div class="fill" style="width:78%"></div>
+                    </div><span>78%</span>
+                </div>
+                <div class="bar-row"><span>4 ★</span>
+                    <div class="bar">
+                        <div class="fill" style="width:14%"></div>
+                    </div><span>14%</span>
+                </div>
+                <div class="bar-row"><span>3 ★</span>
+                    <div class="bar">
+                        <div class="fill" style="width:5%"></div>
+                    </div><span>5%</span>
+                </div>
+                <div class="bar-row"><span>2 ★</span>
+                    <div class="bar">
+                        <div class="fill" style="width:2%"></div>
+                    </div><span>2%</span>
+                </div>
+                <div class="bar-row"><span>1 ★</span>
+                    <div class="bar">
+                        <div class="fill" style="width:1%"></div>
+                    </div><span>1%</span>
+                </div>
+            </div>
+
+            <div class="reviews-grid">
+
+                <div class="review-card">
+                    <div class="review-top">
+                        <div class="reviewer">
+                            <div class="avatar">A</div>
+                            <div>
+                                <strong>Alicia B.</strong>
+                                <p class="location">Sydney, NSW</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-title">"I love this bikini!"</p>
+                    <p class="review-body">I've been wearing it every day this summer. It's incredibly comfortable and
+                        the fit is perfect. The colours are exactly as shown online. So happy!</p>
+                    <p class="review-date">27 Jan 2025 · The Brasileira — Ipanema Sand, S</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-top">
+                        <div class="reviewer">
+                            <div class="avatar">M</div>
+                            <div>
+                                <strong>Madison T.</strong>
+                                <p class="location">Melbourne, VIC</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-title">"Comfy and supportive"</p>
+                    <p class="review-body">Happy with the new design. It's the perfect mix of comfortable yet
+                        supportive. The Brazilian cut is so flattering — great for active beach days!</p>
+                    <p class="review-date">20 Jan 2025 · The Brasileira — Copacabana Blue, M</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-top">
+                        <div class="reviewer">
+                            <div class="avatar">S</div>
+                            <div>
+                                <strong>Sonya C.</strong>
+                                <p class="location">Brisbane, QLD</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-title">"Perfect"</p>
+                    <p class="review-body">So happy with this. I've been wearing it all season for water activities and
+                        the strap hasn't slipped once. Holds its shape beautifully even after repeated swims.</p>
+                    <p class="review-date">18 Jan 2025 · The Brasileira — Carnaval Red, S</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-top">
+                        <div class="reviewer">
+                            <div class="avatar">N</div>
+                            <div>
+                                <strong>Natalie P.</strong>
+                                <p class="location">Perth, WA</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-title">"Best fit I've ever had"</p>
+                    <p class="review-body">This is like wearing nothing at all! It's very comfortable, sits perfectly
+                        and the padding doesn't move. Makes you feel perfectly protected all day at the beach.</p>
+                    <p class="review-date">10 Jan 2025 · The Brasileira — Ipanema Sand, M</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-top">
+                        <div class="reviewer">
+                            <div class="avatar">L</div>
+                            <div>
+                                <strong>Lauren P.</strong>
+                                <p class="location">Gold Coast, QLD</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-title">"Ordered all three colours"</p>
+                    <p class="review-body">Great quality. The Brazilian cut is honestly the most flattering thing I've
+                        ever worn to the beach. I immediately went back and ordered the other two colours.</p>
+                    <p class="review-date">5 Jan 2025 · The Brasileira — Copacabana Blue, S</p>
+                </div>
+
+                <div class="review-card featured">
+                    <div class="review-top">
+                        <div class="reviewer">
+                            <div class="avatar">J</div>
+                            <div>
+                                <strong>Jasmine K.</strong>
+                                <p class="location">Byron Bay, NSW</p>
+                            </div>
+                        </div>
+                        <div class="review-stars">★★★★★</div>
+                    </div>
+                    <p class="review-title">"The only bikini I'll ever buy"</p>
+                    <p class="review-body">I've tried so many brands and nothing compares. The fit is extraordinary, the
+                        fabric is buttery smooth, and it actually stays in place while surfing. Worth every cent.</p>
+                    <p class="review-date">2 Jan 2025 · The Brasileira — Carnaval Red, XS</p>
+                </div>
+
+            </div>
+            <div class="pagination">
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn">4</button>
+                <button class="page-btn">5</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── NEWSLETTER ── -->
+    <section class="newsletter">
+        <img src="https://images.unsplash.com/photo-1528150177508-7cc0c36cda5c?w=1800&q=85&fit=crop" alt="Beach sunset"
+            class="newsletter-bg" />
+        <div class="newsletter-overlay"></div>
+        <div class="newsletter-content">
+            <h2>Join the Rio Community</h2>
+            <p>Be first to access new drops, private sales, and behind-the-scenes from our Sydney shoots. Join 8,000+
+                Rio girls.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="Enter your email address" />
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>Summer Rio</h3>
+                <p>Sun, sand, and sustainable style. Born in Sydney, inspired by Brazil.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">Pinterest</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#">The Brasileira</a></li>
+                    <li><a href="#">Ipanema Sand</a></li>
+                    <li><a href="#">Copacabana Blue</a></li>
+                    <li><a href="#">Carnaval Red</a></li>
+                    <li><a href="#">Sale</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="size-guide.html">Size Guide</a></li>
+                    <li><a href="policy.html">Shipping & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#">Sustainability</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Affiliate Program</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Summer Rio. All rights reserved.</p>
+            <div>
+                <a href="policy.html">Privacy Policy</a>
+                <a href="policy.html">Terms of Service</a>
+                <a href="#">Cookie Settings</a>
+            </div>
+        </div>
+        <div class="footer-wordmark">Summer Rio</div>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
