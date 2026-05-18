@@ -19,7 +19,7 @@
 
     <!-- ── ANNOUNCEMENT BAR ── -->
     <div class="announcement-bar">
-        <p>Free shipping on orders over $99 — Discover the Sydney Summer Collection</p>
+        <p>FREE SHIPPING ON ORDERS OVER $150 AUD</p>
     </div>
 
     <!-- ── NAVIGATION ── -->
@@ -28,19 +28,31 @@
             <span></span><span></span><span></span>
         </button>
         <div class="nav-left">
-            <a href="#shop">Shop</a>
-            <a href="#collections">Collections</a>
-            <a href="#about">Journal</a>
+            <a href="#shop">SHOP ˅</a>
+            <a href="#about">ABOUT</a>
+            <a href="#collections">COLLECTIONS</a>
         </div>
         <div class="nav-logo">
-            <a href="#">SummerRio</a>
+            <a href="#">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 12C2 12 5 9 12 12C19 15 22 12 22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="12" cy="7" r="3" fill="currentColor"/>
+                </svg>
+                <br>
+                SummerRio
+            </a>
         </div>
         <div class="nav-right">
-            <a href="#">Search</a>
-            <a href="#">Wishlist</a>
-            <a href="#" class="bag-link">Bag (0)</a>
+            <a href="#">SIZE GUIDE</a>
+            <a href="#">CONTACT</a>
+            <a href="#" class="icon-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.3-4.3"/></svg></a>
+            <a href="#" class="icon-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+            <a href="#" class="bag-link"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> <span class="bag-count">0</span></a>
         </div>
     </nav>
+    <div class="nav-wave-container">
+        <div class="nav-wave"></div>
+    </div>
 
     <!-- ── MOBILE MENU ── -->
     <div class="mobile-menu-overlay"></div>
@@ -74,23 +86,50 @@
 
     <!-- ── HERO ── -->
     <section class="hero">
-        <div class="hero-bg">
-            <img src="https://images.unsplash.com/photo-1555617135-8724b69f766c?w=1800&q=85&fit=crop"
-                alt="Woman in bikini on Sydney beach" class="hero-img" />
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-content">
-            <span class="hero-tag">New Collection — Summer 2025</span>
-            <h1 class="hero-title">Born for the<br /><em>Sydney Shore</em></h1>
-            <p class="hero-subtitle">Brazilian-cut swimwear designed for movement, sun and saltwater.</p>
-            <div class="hero-ctas">
-                <a href="#shop" class="btn btn-primary">Shop The Brasileira</a>
-                <a href="#about" class="btn btn-ghost">Explore the Story</a>
+        <div class="hero-split">
+            <div class="hero-left">
+                <div class="hero-content">
+                    <span class="hero-tag">NEW COLLECTION — SUMMER 2027</span>
+                    <h1 class="hero-title">Born for the<br /><em>Sydney Shore</em></h1>
+                    <p class="hero-subtitle">Brazilian-cut swimwear designed for movement, sun and saltwater.</p>
+                    <div class="hero-ctas">
+                        <a href="#shop" class="btn btn-primary">SHOP THE BRASILEIRA</a>
+                        <a href="#about" class="btn btn-outline">EXPLORE THE STORY</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <img src="https://images.unsplash.com/photo-1555617135-8724b69f766c?w=1800&q=85&fit=crop"
+                    alt="Woman in bikini on Sydney beach" class="hero-img" />
             </div>
         </div>
-        <div class="hero-scroll">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+    </section>
+
+    <!-- ── FEATURES ── -->
+    <section class="features-bar">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12c2 0 4-4 8-4s6 4 8 4 4-4 4-4M2 17c2 0 4-4 8-4s6 4 8 4 4-4 4-4M2 7c2 0 4-4 8-4s6 4 8 4 4-4 4-4"/></svg></div>
+                    <h4>DESIGNED IN AUSTRALIA</h4>
+                    <p>Inspired by the ocean<br>and made to last.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 1 8.3C19.24 16.8 15.82 20 11 20z"/><line x1="11" y1="20" x2="15" y2="10"/></svg></div>
+                    <h4>SUSTAINABLE FABRICS</h4>
+                    <p>Eco-conscious materials<br>for a better future.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg></div>
+                    <h4>MADE FOR SUN</h4>
+                    <p>Timeless designs for<br>every summer.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+                    <h4>FOR EVERY BODY</h4>
+                    <p>Confidence looks<br>beautiful on you.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -98,8 +137,11 @@
     <section class="product-spotlight fade-in" id="shop">
         <div class="container">
             <div class="section-header">
-                <h2>The Brasileira</h2>
-                <span class="tag-pill">Bestseller</span>
+                <div class="section-title-wrap">
+                    <span class="section-subtitle">SHOP THE COLLECTION</span>
+                    <h2>Timeless pieces. Effortless you.</h2>
+                </div>
+                <a href="#collections" class="view-all-link">VIEW ALL →</a>
             </div>
             <div class="spotlight-grid">
                 <div class="spotlight-images">
